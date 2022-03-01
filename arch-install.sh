@@ -34,6 +34,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #Add primary user
 useradd -m -G sys,adm,lp,wheel,audio,video,optical,storage,floppy,scanner rich
 
+#Make passwords
+passwd
+passwd rich
 
 #add directories vm only
 # mkdir mkdir -p /data/{users/{rich,edyta,kiwi},Shared/{Downloads,Pictures,Videos,DVDs,Audio,Music,Public,Scan,Sunday-School}}
@@ -42,4 +45,4 @@ useradd -m -G sys,adm,lp,wheel,audio,video,optical,storage,floppy,scanner rich
 
 #mkdir -p rich/{Desktop,Documents,Templates} edyta/{Desktop,Documents,Templates} kiwi/{Desktop,Documents,Templates}
 
-echo 'dont forget to make passwords'
+echo 'edit the sudo file'
