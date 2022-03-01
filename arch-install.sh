@@ -4,9 +4,8 @@
 
 #Script to install arch linux
 
-
+#Sort mirrors
 pacman -S reflector --noconfirm --needed
-
 reflector --country 'United Kingdom',France,Germany --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 #essential packages
