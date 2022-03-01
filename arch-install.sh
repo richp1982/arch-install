@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+
+#Script to install arch linux
+
+
+#essential packages
+pacman -Syyu networkmanager sudo wget git nano curl grub efibootmgr base-devel --noconfirm --needed 
+
+#Enable network manager
+systemctl enable NetworkManager.service
+
+#create files CHOOSE HOST NAME
+echo LANG=en_GB.UTF-8 >> /etc/locale.conf
+echo KEYMAP=uk >> /etc/vconsole.conf
+#echo (hostname) >> /etc/hostname
+
+#install grub un-comment and add boot device
+
+#grub-install --target=i386-pc /dev/??
+
+#grub -install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=?????
+
+
+#make grub config
+#grub-mkconfig -o /boot/grub/grub.cfg
+
+
+#Add primary user
+useradd -m -G sys,adm,lp,wheel,audio,video,optical,storage,floppy,scanner rich
+
+
+#add directories vm only
+# mkdir mkdir -p /data/{users/{rich,edyta,kiwi},Shared/{Downloads,Pictures,Videos,DVDs,Audio,Music,Public,Scan,Sunday-School}}
+
+#cd /data/users
+
+#mkdir -p rich/{Desktop,Documents,Templates} edyta/{Desktop,Documents,Templates} kiwi/{Desktop,Documents,Templates}
+
+echo 'dont forget to make passwords'
