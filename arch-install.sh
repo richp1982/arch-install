@@ -9,7 +9,11 @@ pacman -S reflector --noconfirm --needed
 reflector --country 'United Kingdom',France,Germany --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 #essential packages
-pacman -Syyu networkmanager sudo wget curl grub efibootmgr --noconfirm --needed
+pacman -Syyu networkmanager sudo wget curl grub efibootmgr dosfstools mtools pciutils usbutils linux-headers --noconfirm --needed
+
+#install microcode uncomment to select
+#sudo pacman -S intel-ucode
+#sudo pacman -S amd-ucode xf86-video-amdgpu
 
 #Enable network manager
 systemctl enable NetworkManager.service
@@ -38,7 +42,7 @@ passwd
 passwd rich
 
 #add directories vm only
-# mkdir mkdir -p /data/{users/{rich,edyta,kiwi},Shared/{Downloads,Pictures,Videos,DVDs,Audio,Music,Public,Scan,Sunday-School}}
+# mkdir mkdir -p /data/{users/{rich,edyta,kiwi},shared/{Downloads,Pictures,Videos,DVDs,Audio,Music,Public,Scan,Sunday-School}}
 
 #cd /data/users
 
