@@ -6,14 +6,15 @@
 
 #Sort mirrors
 pacman -S reflector --noconfirm --needed
+
 reflector --country 'United Kingdom',France,Germany --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 #essential packages
-pacman -Syyu networkmanager sudo wget curl grub efibootmgr dosfstools mtools pciutils usbutils linux-headers --noconfirm --needed
+pacman -Syyu networkmanager sudo wget curl grub efibootmgr dosfstools mtools pciutils usbutils linux-headers rsync unzip openssh --noconfirm --needed
 
 #install microcode uncomment to select
-#sudo pacman -S intel-ucode
-#sudo pacman -S amd-ucode xf86-video-amdgpu
+#sudo pacman -S intel-ucode --noconfirm --needed
+#sudo pacman -S amd-ucode xf86-video-amdgpu --noconfirm --needed
 
 #Enable network manager
 systemctl enable NetworkManager.service
@@ -27,7 +28,7 @@ echo (hostname) >> /etc/hostname
 
 #grub-install --target=i386-pc /dev/??
 
-#grub -install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=?????
+#grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=?????
 
 
 #make grub config
