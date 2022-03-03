@@ -49,4 +49,12 @@ passwd rich
 
 #mkdir -p rich/{Desktop,Documents,Templates} edyta/{Desktop,Documents,Templates} kiwi/{Desktop,Documents,Templates}
 
+#install breeze grb theme
+cd /a/arch-install
+sudo chmod +x grub-theme.sh
+sudo ./grub-theme.sh
+
+#install oh my bash
+
+
 echo 'edit the sudo file'
