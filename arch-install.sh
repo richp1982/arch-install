@@ -57,6 +57,6 @@ chmod +x grub-theme.sh
 #install oh my bash
 cd /a/arch-install
 chmod +x bash-setup.sh
-./ bas-setup.sh
+./bash-setup.sh
 
 echo 'edit the sudo file'
