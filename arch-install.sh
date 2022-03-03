@@ -51,10 +51,12 @@ passwd rich
 
 #install breeze grb theme
 cd /a/arch-install
-sudo chmod +x grub-theme.sh
-sudo ./grub-theme.sh
+chmod +x grub-theme.sh
+./grub-theme.sh
 
 #install oh my bash
-
+cd /a/arch-install
+chmod +x bash-setup.sh
+./ bas-setup.sh
 
 echo 'edit the sudo file'
