@@ -10,7 +10,7 @@ pacman -S reflector --noconfirm --needed
 reflector --country 'United Kingdom',France,Germany --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 #essential packages
-pacman -Syyu networkmanager sudo wget curl grub efibootmgr dosfstools mtools pciutils usbutils linux-headers rsync unzip openssh htop --noconfirm --needed
+pacman -Syyu networkmanager sudo wget os-prober curl grub efibootmgr dosfstools mtools pciutils usbutils linux-headers rsync unzip openssh htop --noconfirm --needed
 
 #install microcode uncomment to select
 #sudo pacman -S intel-ucode --noconfirm --needed
