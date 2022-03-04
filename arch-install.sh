@@ -19,6 +19,10 @@ pacman -Syyu networkmanager sudo wget os-prober curl grub efibootmgr dosfstools 
 #Enable network manager
 systemctl enable NetworkManager.service
 
+#set local time
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+hwclock --systohc
+
 #create locales
 sed -i 's|#en_GB.UTF|en_GB.UTF|' /etc/locale.gen
 locale-gen
@@ -46,6 +50,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 useradd -m -G sys,adm,lp,wheel,audio,video,optical,storage,floppy,scanner rich
 
 #Make passwords
+echo 'set password for rich'
 passwd
 passwd rich
 
