@@ -71,4 +71,14 @@ cd /a/arch-install
 chmod +x bash-setup.sh
 ./bash-setup.sh
 
-echo 'edit the sudo file'
+#edit sudo file
+EDITOR=nano visudo
+
+#Install KDE
+chown -R rich:rich /a
+su rich
+cd /a
+git clone https://github.com/richp1982/kde-setup.gti
+cd kde-setup
+chown +x install-plasma.sh
+./install-plasma.sh
