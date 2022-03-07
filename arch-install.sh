@@ -19,7 +19,7 @@ pacman -Syyu networkmanager sudo wget os-prober curl grub efibootmgr dosfstools 
 #Enable network manager
 systemctl enable NetworkManager.service
 
-#set local time
+#set local time (edit for other local times)
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc
 
@@ -27,9 +27,9 @@ hwclock --systohc
 sed -i 's|#en_GB.UTF|en_GB.UTF|' /etc/locale.gen
 locale-gen
 
-#create files CHOOSE HOST NAME
+#create files CHOOSE HOST NAME and keyboard layout
 echo LANG=en_GB.UTF-8 >> /etc/locale.conf
-echo KEYMAP=uk >> /etc/vconsole.conf
+echo KEYMAP=?? >> /etc/vconsole.conf
 echo (hostname) >> /etc/hostname
 
 #change swappiness
@@ -81,4 +81,5 @@ cd /a
 git clone https://github.com/richp1982/kde-setup.gti
 cd kde-setup
 chown +x install-plasma.sh
-./install-plasma.sh
+echo 'check install script and comment out unecessary operations'
+echo ./kde-setup.sh to run script (DO NOT RUN AS SUPERUSER)
