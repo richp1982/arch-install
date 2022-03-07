@@ -10,7 +10,7 @@ pacman -S reflector --noconfirm --needed
 reflector --country 'United Kingdom',France,Germany --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 #essential packages
-pacman -Syyu networkmanager sudo wget os-prober curl grub efibootmgr dosfstools mtools pciutils usbutils linux-headers rsync unzip openssh htop --noconfirm --needed
+pacman -Syyu networkmanager sudo neofetch wget os-prober curl grub efibootmgr dosfstools mtools pciutils usbutils linux-headers rsync unzip openssh htop --noconfirm --needed
 
 #install microcode uncomment to select
 #sudo pacman -S intel-ucode --noconfirm --needed
@@ -24,7 +24,7 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc
 
 #create locales
-sed -i 's|#en_GB.UTF|en_GB.UTF|' /etc/locale.gen
+sed -i 's|# en_GB.UTF-8 UTF-8|en_GB.UTF-8 UTF-8|' /etc/locale.gen
 locale-gen
 
 #create files CHOOSE HOST NAME and keyboard layout
@@ -50,8 +50,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 useradd -m -G sys,adm,lp,wheel,audio,video,optical,storage,floppy,scanner rich
 
 #Make passwords
-echo 'set password for rich'
+echo 'set password for root'
 passwd
+echo 'set password for rich'
 passwd rich
 
 #add directories vm only
@@ -81,5 +82,5 @@ cd /a
 git clone https://github.com/richp1982/kde-setup.gti
 cd kde-setup
 chown +x install-plasma.sh
-echo 'check install script and comment out unecessary operations'
-echo ./kde-setup.sh to run script (DO NOT RUN AS SUPERUSER)
+echo 'check kde-setup.sh install script and comment out unecessary operations'
+echo './kde-setup.sh to run script (DO NOT RUN AS SUPERUSER)'
