@@ -81,4 +81,4 @@ cd /a
 git clone https://github.com/richp1982/kde-setup.git
 cd kde-setup
 chmod +x install-plasma.sh
-echo 'exit chroot and reboot - login as root edit install-plasma.sh and run
+echo 'exit chroot and reboot - login as root edit install-plasma.sh and run'
