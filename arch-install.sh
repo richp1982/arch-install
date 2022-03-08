@@ -24,7 +24,7 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc
 
 #create locales
-sed -i 's|# en_GB.UTF-8 UTF-8|en_GB.UTF-8 UTF-8|' /etc/locale.gen
+sed -i 's|.*en_GB.UTF.*|en_GB.UTF-8 UTF-8|' /etc/locale.gen
 locale-gen
 
 #create files CHOOSE HOST NAME and keyboard layout
