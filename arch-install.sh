@@ -77,9 +77,8 @@ EDITOR=nano visudo
 
 #Install KDE
 chown -R rich:rich /a
-su rich
 cd /a
-git clone https://github.com/richp1982/kde-setup.gti
+git clone https://github.com/richp1982/kde-setup.git
 cd kde-setup
 chown +x install-plasma.sh
 echo 'check kde-setup.sh install script and comment out unecessary operations'
