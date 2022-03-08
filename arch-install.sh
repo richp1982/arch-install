@@ -75,11 +75,10 @@ chmod +x bash-setup.sh
 #edit sudo file
 EDITOR=nano visudo
 
-#Install KDE
+#Download KDE installer
 chown -R rich:rich /a
 cd /a
 git clone https://github.com/richp1982/kde-setup.git
 cd kde-setup
-chown +x install-plasma.sh
-echo 'check kde-setup.sh install script and comment out unecessary operations'
-echo './kde-setup.sh to run script (DO NOT RUN AS SUPERUSER)'
+chmod +x install-plasma.sh
+echo 'exit chroot and reboot - login as root edit install-plasma.sh and run
