@@ -1,0 +1,6 @@
+Interface=wlp3s0
+Connection=wifi
+Ip=static
+Address=('192.168.1.42')
+Gateway=('192.168.1.1')
+DNS=('192.168.1.1')
