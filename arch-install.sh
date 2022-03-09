@@ -36,6 +36,7 @@ echo "::1           localhost" >> /etc/hosts
 echo "127.0.1.1     arch-laptop >> /etc/hosts
 cd /a/install-arch
 cp my_static_profile /etc/netctl/my_static_profile
+netctl enable my_static_profile
 
 #change swappiness
 echo vm.swappiness=5 >> /etc/sysctl.d/99-swappiness.conf
