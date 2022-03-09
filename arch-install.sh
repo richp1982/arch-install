@@ -31,6 +31,11 @@ locale-gen
 echo LANG=en_GB.UTF-8 >> /etc/locale.conf
 echo KEYMAP=?? >> /etc/vconsole.conf
 echo (hostname) >> /etc/hostname
+echo "127.0.0.1     localhost" >> /etc/hosts
+echo "::1           localhost" >> /etc/hosts
+echo "127.0.1.1     arch-laptop >> /etc/hosts
+cd /a/install-arch
+cp my_static_profile /etc/netctl/my_static_profile
 
 #change swappiness
 echo vm.swappiness=5 >> /etc/sysctl.d/99-swappiness.conf
@@ -62,7 +67,7 @@ passwd rich
 
 #mkdir -p rich/{Desktop,Documents,Templates} edyta/{Desktop,Documents,Templates} kiwi/{Desktop,Documents,Templates}
 
-#install breeze grb theme
+#install breeze grub theme
 cd /a/arch-install
 chmod +x grub-theme.sh
 ./grub-theme.sh
