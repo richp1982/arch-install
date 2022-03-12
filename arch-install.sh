@@ -29,11 +29,11 @@ locale-gen
 
 #create files CHOOSE HOST NAME and keyboard layout
 echo LANG=en_GB.UTF-8 >> /etc/locale.conf
-echo KEYMAP=?? >> /etc/vconsole.conf
-echo (hostname) >> /etc/hostname
+echo KEYMAP=uk >> /etc/vconsole.conf
+echo arch-laptop >> /etc/hostname
 echo "127.0.0.1     localhost" >> /etc/hosts
 echo "::1           localhost" >> /etc/hosts
-echo "127.0.1.1     arch-laptop >> /etc/hosts
+echo "127.0.1.1     arch-laptop" >> /etc/hosts
 cd /a/install-arch
 cp my_static_profile /etc/netctl/my_static_profile
 netctl enable my_static_profile
@@ -45,7 +45,7 @@ echo vm.swappiness=5 >> /etc/sysctl.d/99-swappiness.conf
 
 #grub-install --target=i386-pc /dev/??
 
-#grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-KDE
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-KDE
 
 
 #make grub config
@@ -53,7 +53,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 #Add primary user
-useradd -m -G sys,adm,lp,wheel,audio,video,optical,storage,floppy,scanner rich
+useradd -m -G sys,adm,lp,wheel,audio,video,optical,storage,floppy,scanner,disk,rfkill,kvm rich
 
 #Make passwords
 echo 'set password for root'
