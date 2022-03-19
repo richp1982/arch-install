@@ -84,7 +84,7 @@ EDITOR=nano visudo
 #Download KDE installer
 chown -R rich:rich /a
 cd /a
-git clone https://github.com/richp1982/kde-setup.git
-cd kde-setup
-chmod +x install-plasma.sh
+git clone https://github.com/richp1982/desktop-install.git
+cd desktop-install
+chmod +x desktop-install.sh
 echo 'exit chroot and reboot - login as root edit install-plasma.sh and run'
